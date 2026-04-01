@@ -5,7 +5,28 @@ title: "@stacklance/envguard-audit"
 # @stacklance/envguard-audit
 
 ```bash
-npm install @stacklance/envguard-audit
+npm install -D @stacklance/envguard-audit
 ```
 
-See the [package README](https://github.com/fixedbydev/envguard/tree/main/packages/audit) for full API reference.
+## audit()
+
+```ts
+import { audit } from '@stacklance/envguard-audit'
+const result = await audit({ dir: './src', schema: './env.schema.ts' })
+// result.undeclared, result.unused, result.unsafe
+```
+
+## explainKey()
+
+```ts
+import { explainKey } from '@stacklance/envguard-audit'
+const result = await explainKey({ key: 'DATABASE_URL', dir: './src' })
+// result.usages, result.status, result.value
+```
+
+## fixSchema()
+
+```ts
+import { fixSchema } from '@stacklance/envguard-audit'
+fixSchema('./env.schema.ts', undeclaredRefs)
+```

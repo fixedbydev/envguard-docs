@@ -1,11 +1,13 @@
 ---
-title: "env-guard mask"
+title: env-guard mask
 ---
 
 # env-guard mask
 
+Print all env vars with sensitive values redacted.
+
 ```bash
-env-guard mask --help
+env-guard mask [--path .env]
 ```
 
-See [CLI Overview](/docs/cli/overview) for all commands.
+Keys containing `SECRET`, `KEY`, `TOKEN`, `PASSWORD`, or `PASS` show as `****`.

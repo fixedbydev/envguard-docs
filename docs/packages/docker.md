@@ -5,7 +5,18 @@ title: "@stacklance/envguard-docker"
 # @stacklance/envguard-docker
 
 ```bash
-npm install @stacklance/envguard-docker
+npm install -D @stacklance/envguard-docker js-yaml
 ```
 
-See the [package README](https://github.com/fixedbydev/envguard/tree/main/packages/docker) for full API reference.
+```ts
+import { auditDockerCompose } from '@stacklance/envguard-docker'
+
+const result = await auditDockerCompose({
+  composePath: './docker-compose.yml',
+  envPath: './.env',
+  service: 'api',
+})
+// result.missing, result.extra, result.unset
+```
+
+Supports list and map environment formats.
