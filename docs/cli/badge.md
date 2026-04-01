@@ -1,11 +1,17 @@
 ---
-title: "env-guard badge"
+title: env-guard badge
 ---
 
 # env-guard badge
 
+Generate a shields.io-compatible badge URL for your doctor score.
+
 ```bash
-env-guard badge --help
+env-guard badge --score 92 --style flat
 ```
 
-See [CLI Overview](/docs/cli/overview) for all commands.
+Styles: `flat`, `flat-square`, `for-the-badge`.
+
+Colors: green (90+), yellow-green (70-89), orange (50-69), red (below 50).
+
+Outputs markdown, HTML, and raw URL ready to paste into your README.
