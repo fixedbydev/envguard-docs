@@ -1,11 +1,11 @@
 ---
-title: "env-guard fix"
+title: env-guard fix
 ---
 
 # env-guard fix
 
-```bash
-env-guard fix --help
-```
+Append missing keys from `.env.example` to `.env` with empty values.
 
-See [CLI Overview](/docs/cli/overview) for all commands.
+```bash
+env-guard fix [--path .env] [--example .env.example]
+```
