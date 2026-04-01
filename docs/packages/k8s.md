@@ -5,7 +5,16 @@ title: "@stacklance/envguard-k8s"
 # @stacklance/envguard-k8s
 
 ```bash
-npm install @stacklance/envguard-k8s
+npm install -D @stacklance/envguard-k8s js-yaml
 ```
 
-See the [package README](https://github.com/fixedbydev/envguard/tree/main/packages/k8s) for full API reference.
+```ts
+import { auditK8sManifests, generateManifests } from '@stacklance/envguard-k8s'
+
+const result = await auditK8sManifests({ manifestPath: './k8s', envPath: '.env' })
+// result.missing, result.extra, result.typeMismatches
+
+const { configMap, secret } = generateManifests('.env', 'app-env', 'default')
+```
+
+Supports ConfigMap, Secret, multi-document YAML, and directory scanning.
